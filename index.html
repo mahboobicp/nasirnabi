@@ -1,189 +1,226 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasir Nabi - Professional Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .contact {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .contact a {
-            color: #3498db;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Nasir Nabi – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --primary: #0d1b2a;
+      --accent: #1b9aaa;
+      --light: #e0e1dd;
+      --dark: #020617;
+      --muted: #415a77;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 80px 20px 60px;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin: 5px 3px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: -40px auto 0;
+      padding: 20px;
+    }
+    section {
+      background: #fff;
+      margin: 30px 0;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+    h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      border-left: 5px solid var(--accent);
+      padding-left: 15px;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 2px solid var(--accent);
+    }
+    .timeline li {
+      list-style: none;
+      margin-bottom: 25px;
+      position: relative;
+    }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .contact-bar a {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+    .contact-bar a:hover {
+      background: var(--muted);
+    }
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      header {
+        padding: 60px 15px 50px;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Nasir Nabi</h1>
-        <p>SHRM-SCP® | PMP® | NEBOSH IGC®<br>
-        Strategic HR & Project Management Professional<br>
-        Location: Mardan, KP, Pakistan | Cell: +92-3319069388 | Email: akcentstyle71@gmail.com</p>
-    </header>
 
-    <section id="summary">
-        <h2>Professional Summary</h2>
-        <p>Results-driven HRM, Project Management, Environmental, and Quality Management professional with over 18 years of experience driving organizational excellence, sustainability, and quality standards. Proven track record in managing complex projects, leading cross-functional teams, and implementing effective HR strategies. Skilled in ISO standards, environmental management, and quality assurance, with a strong passion for delivering exceptional results and fostering a culture of continuous improvement.</p>
-        <h3>Objectives</h3>
-        <p>To leverage my expertise in HR management and project management to drive business growth, enhance organizational efficiency, and foster a culture of excellence in a dynamic and forward-thinking organization.</p>
+  <header>
+    <h1>Nasir Nabi</h1>
+    <p>SHRM-SCP | PMP | NEBOSH IGC</p>
+    <p>Strategic HR & Project Management Leader</p>
+    <span class="badge">18+ Years Experience</span>
+    <span class="badge">Mardan, KP Pakistan</span>
+  </header>
+
+  <div class="container">
+    <!-- About -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p>Results-driven HRM, Project Management, Environmental, and Quality Management professional with over 18 years of experience driving organizational excellence, sustainability, and quality standards. Proven track record in managing complex projects, leading cross-functional teams, and implementing effective HR strategies. Skilled in ISO standards, environmental management, and quality assurance, with a strong passion for delivering exceptional results and fostering a culture of continuous improvement.</p>
     </section>
 
-    <section id="competencies">
-        <h2>Core Competencies</h2>
-        <h3>Strategic Human Resource Leadership (SHRM-SCP®)</h3>
-        <ul>
-            <li>Workforce Planning & Organizational Development</li>
-            <li>Employee Engagement & Retention Strategies</li>
-            <li>Talent Acquisition & Leadership Development</li>
-            <li>Performance Management & KPI Alignment</li>
-            <li>HR Policy Design, Compliance & Audit Readiness</li>
-            <li>Diversity, Equity & Inclusion (DEI) Implementation</li>
-        </ul>
-        <h3>Project Management Excellence (PMP®)</h3>
-        <ul>
-            <li>Project Planning, Execution & Control (Agile & Waterfall)</li>
-            <li>Budgeting, Cost Optimization & Resource Allocation</li>
-            <li>Stakeholder Communication & Cross-Functional Coordination</li>
-            <li>Risk Assessment, Mitigation & Change Management</li>
-            <li>Governance, Quality Assurance & Continuous Improvement</li>
-        </ul>
-        <h3>Health, Safety & Risk Management (NEBOSH-IGC®)</h3>
-        <ul>
-            <li>Occupational Health & Safety (ISO 45001 Standards)</li>
-            <li>Risk Identification, Hazard Analysis & Incident Investigation</li>
-            <li>Emergency Response & Crisis Preparedness</li>
-            <li>Safety Culture Development & Training Programs</li>
-            <li>Legal Compliance & Environmental Safety Audits</li>
-        </ul>
-        <h3>Cross-Functional Leadership & Business Integration</h3>
-        <ul>
-            <li>Policy Integration Across HR, Projects & HSE Functions</li>
-            <li>Organizational Change & Business Transformation</li>
-            <li>Strategic Decision-Making & Data-Driven Insights</li>
-            <li>Ethics, Governance & Corporate Social Responsibility (CSR)</li>
-            <li>Performance Optimization & Operational Excellence</li>
-        </ul>
+    <!-- Core Competencies -->
+    <section>
+      <h2>Core Competencies</h2>
+      <div class="grid">
+        <div class="card"><h3>Strategic HR Leadership</h3><p>Workforce planning, talent acquisition, DEI implementation, policy design & compliance.</p></div>
+        <div class="card"><h3>Project Management Excellence</h3><p>Agile & Waterfall delivery, budgeting, risk mitigation, governance & QA.</p></div>
+        <div class="card"><h3>Health, Safety & Risk</h3><p>ISO 45001, hazard analysis, incident investigation, emergency response, safety culture.</p></div>
+        <div class="card"><h3>Cross-Functional Leadership</h3><p>Change management, CSR, data-driven decisions, operational excellence.</p></div>
+      </div>
     </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
-        <h3>Senior Consultant HR M (Registration & Organizational Development) - Hotel Elites Nathiagali (Aug 2025 - Present)</h3>
-        <p>Leading institutional registration, compliance, and organizational development for hospitality properties, including partnerships with NAVTTC, TEVTA, and INGOs like GIZ and UNDP.</p>
-        <h3>Consultant Human Resource Management (Organizational Development) - Alhamra Hotel Mardan (Oct 2024 - Jul 2025)</h3>
-        <p>Managed HR operations, recruitment, policy administration, training, and compliance for efficient hotel operations.</p>
-        <h3>Deputy Director BPS-18 (HRD & Zone Operations) - KPEZDMC, Govt. of KP (Jul 2022 - Aug 2023)</h3>
-        <p>Oversaw industrial estate operations, investor facilitation, infrastructure management, and business development.</p>
-        <h3>Assistant Director BPS-17 (TVET) - KPEZDMC, Govt. of KP (May 2017 - Jul 2022)</h3>
-        <p>Led TVET initiatives, candidate placement, and collaborations for skilled workforce development.</p>
-        <h3>Principal (TVET Sector) - TEVTA, Govt. of KPK (Jan 2014 - Mar 2017)</h3>
-        <p>Managed institute operations, curriculum development, and industry linkages for vocational training.</p>
-        <h3>Admin & Finance Officer - Amazon Corporation, Islamabad (Oct 2012 - Dec 2013)</h3>
-        <p>Handled project administration, finance, and liaison with UN agencies for construction projects.</p>
-        <h3>Administrator (TVET) - Universal Institute of Technology Nowshera (Jan 2008 - Sep 2012)</h3>
-        <p>Oversaw administration, academic planning, and extracurricular activities for two campuses.</p>
-        <h3>Trainee Consultant - Environmental & Quality Management Consultants (Pvt) Ltd. (Jan 2007 - Dec 2007)</h3>
-        <p>Assisted in ISO standards implementation, audits, and training for quality and environmental management.</p>
+    <!-- Experience -->
+    <section>
+      <h2>Selected Experience</h2>
+      <ul class="timeline">
+        <li>
+          <strong>Senior Consultant HRM</strong> – Hotel Elites Nathiagali (Aug 2025 – Present)<br>
+          Leading institutional registration with NAVTTC, TEKTAs, GIZ, UNDP; designing HR frameworks & training institutes.
+        </li>
+        <li>
+          <strong>Consultant Human Resource Management</strong> – Alhamra Hotel Mardan (Oct 2009 – Jul 2025)<br>
+          Full-spectrum HR: recruitment, payroll & benefits, employee relations, union negotiations, training & development.
+        </li>
+        <li>
+          <strong>Deputy Director (HRD & Zone Ops)</strong> – KPEZDMC Govt. KP (Jul 2022 – Aug 2023)<br>
+          Oversaw industrial estate operations, investor facilitation, land acquisition, leasing & compliance.
+        </li>
+        <li>
+          <strong>Principal (TVET)</strong> – TEVTA Govt. KPK (Jan 2014 – Mar 2017)<br>
+          Directed institute strategy, CBT programs, industry linkages & OJT agreements for 5 major companies.
+        </li>
+      </ul>
     </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li>Masters (Mathematics) - Northern University, Nowshera (Oct 2012)</li>
-            <li>MBA (Human Resource Management) - Air University, Islamabad (Oct 2007)</li>
-            <li>B.Sc. (Bachelors of Science) - University of Peshawar (Oct 2005)</li>
-            <li>Faculty of Science (Intermediate) - Govt. Post Graduate College Nowshera (Jul 2003)</li>
-            <li>Matriculation (SSC) - Govt. High Secondary School Baghdada Mardan (Mar 2001)</li>
-        </ul>
+    <!-- Education & Certifications -->
+    <section>
+      <h2>Education & Certifications</h2>
+      <div class="grid">
+        <div class="card"><strong>MBA (HRM)</strong><br>Air University Islamabad</div>
+        <div class="card"><strong>Masters (Mathematics)</strong><br>Northern University Nowshera</div>
+        <div class="card"><strong>SHRM-SCP</strong><br>Society for Human Resource Management, USA</div>
+        <div class="card"><strong>PMP®</strong><br>Project Management Institute, USA</div>
+        <div class="card"><strong>NEBOSH IGC</strong><br>National Examination Board, UK</div>
+        <div class="card"><strong>KAB Certified Trainer</strong><br>EU & TUSDEC</div>
+      </div>
     </section>
 
-    <section id="certifications">
-        <h2>Professional Certifications</h2>
-        <ul>
-            <li>SHRM-SCP (Senior Certified Professional) - Society for Human Resource Management, USA (May 2024)</li>
-            <li>NEBOSH International General Certificate in Occupational Health and Safety - UK (Apr 2024)</li>
-            <li>Certified Project Management Professional (PMP) - NAVTTC, Pakistan (Jun 2024)</li>
-            <li>KAB Certified Trainer - European Union & TUSDEC (Apr 2015 - Mar 2017)</li>
-        </ul>
-        <h3>IT Courses/Certifications</h3>
-        <ul>
-            <li>Operating System (Windows 11, Windows 10)</li>
-            <li>Microsoft Office (Professional Level)</li>
-            <li>Hardware & Troubleshooting</li>
-            <li>Internet, In-Page, Networking</li>
-            <li>Computer Course from Trade Testing Board Peshawar</li>
-        </ul>
+    <!-- Contact -->
+    <section>
+      <h2>Contact</h2>
+      <div class="contact-bar">
+        <a href="tel:+923319069388">📱 +92 331 906 9388</a>
+        <a href="mailto:akcentstyle71@gmail.com">✉️ Email</a>
+        <a href="https://wa.me/923319069388" target="_blank">WhatsApp</a>
+      </div>
     </section>
+  </div>
 
-    <section id="awards">
-        <h2>Distinctions/Awards</h2>
-        <ul>
-            <li>Young Entrepreneurial Award - YES Network Pakistan (Mar 2010 - Dec 2011)</li>
-            <li>“Best Debates” Award - PAK-TURK International Schools Islamabad</li>
-            <li>“Skilled Training Award” - Mehcon International Fiber Glass Company Peshawar (ISO Certification)</li>
-            <li>Award of “Best Teacher/Administrator” - Universal Institute of Technology Mardan</li>
-        </ul>
-        <h3>Languages</h3>
-        <p>English, Urdu, Arabic, Pashto</p>
-        <h3>Extra-Curricular Activities</h3>
-        <p>Reading Books, Travelling, Fish Hunting, Cricket</p>
-    </section>
+  <footer>
+    © <span id="yr"></span> Nasir Nabi. Crafted with care.
+  </footer>
 
-    <section class="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out for collaborations or opportunities.</p>
-        <a href="mailto:akcentstyle71@gmail.com">Email</a> | <a href="https://wa.me/923319069388">WhatsApp</a> | <a href="#">LinkedIn (Add your profile link)</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Nasir Nabi. All rights reserved.</p>
-    </footer>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
