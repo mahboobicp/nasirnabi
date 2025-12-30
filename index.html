@@ -1,226 +1,407 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nasir Nabi – Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root {
-      --primary: #0d1b2a;
-      --accent: #1b9aaa;
-      --light: #e0e1dd;
-      --dark: #020617;
-      --muted: #415a77;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 80px 20px 60px;
-      text-align: center;
-      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    }
-    header h1 {
-      font-size: 2.8rem;
-      letter-spacing: 1px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.85;
-    }
-    .badge {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      margin: 5px 3px;
-    }
-    .container {
-      max-width: 1100px;
-      margin: -40px auto 0;
-      padding: 20px;
-    }
-    section {
-      background: #fff;
-      margin: 30px 0;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    }
-    h2 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      border-left: 5px solid var(--accent);
-      padding-left: 15px;
-    }
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-    .card {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-    }
-    .card h3 {
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .timeline {
-      position: relative;
-      padding-left: 30px;
-      border-left: 2px solid var(--accent);
-    }
-    .timeline li {
-      list-style: none;
-      margin-bottom: 25px;
-      position: relative;
-    }
-    .timeline li::before {
-      content: "";
-      position: absolute;
-      left: -38px;
-      top: 5px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-    .contact-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .contact-bar a {
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 25px;
-      transition: 0.3s;
-    }
-    .contact-bar a:hover {
-      background: var(--muted);
-    }
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    @media (max-width: 600px) {
-      header {
-        padding: 60px 15px 50px;
-      }
-      header h1 {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nasir Nabi | HR • Project • Quality Management Leader</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+--bg:#0d0d0d;
+--text:#f1f1f1;
+--primary:#007bff;
+--card:#1a1a1a;
+--muted:#aaa;
+--border:#333;
+--green:#28a745;
+--orange:#fd7e14;
+--purple:#6f42c1;
+}
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+h1,h2,h3{
+margin-top:0;
+}
+
+h2{
+text-align:center;
+margin:50px 0;
+text-transform:uppercase;
+position:relative;
+}
+
+h2::after{
+content:"";
+width:50px;
+height:3px;
+background:var(--primary);
+position:absolute;
+bottom:-10px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.section{
+padding:40px 0;
+border-top:1px solid var(--border);
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:10px;
+padding:25px;
+margin-bottom:25px;
+transition:transform .3s,border-color .3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:var(--primary);
+}
+
+.header{
+position:sticky;
+top:0;
+background:var(--bg);
+border-bottom:1px solid var(--border);
+z-index:1000;
+}
+
+.nav{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+flex-wrap:wrap;
+}
+
+.nav a{
+color:var(--muted);
+text-decoration:none;
+font-weight:600;
+}
+
+.nav a:hover{
+color:var(--primary);
+}
+
+.hero{
+text-align:center;
+padding:80px 0;
+}
+
+.hero h1{
+font-size:4em;
+}
+
+.role{
+color:var(--primary);
+letter-spacing:2px;
+font-weight:600;
+}
+
+/* Certification cards */
+.cert-badges{
+display:flex;
+justify-content:center;
+gap:12px;
+margin:25px 0;
+flex-wrap:wrap;
+}
+
+.cert{
+padding:8px 16px;
+border-radius:6px;
+font-weight:600;
+color:#fff;
+font-size:0.85em;
+letter-spacing:0.5px;
+box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+.cert.green{background:var(--green);}
+.cert.orange{background:var(--orange);}
+.cert.purple{background:var(--purple);}
+
+/* Buttons */
+.btns{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:35px;
+}
+
+.btn{
+padding:12px 22px;
+border-radius:6px;
+font-weight:600;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:8px;
+transition:all .3s;
+}
+
+.primary{
+background:var(--primary);
+color:#fff;
+}
+
+.primary:hover{opacity:.9;}
+
+.secondary{
+border:2px solid var(--primary);
+color:var(--primary);
+}
+
+.secondary:hover{
+background:var(--primary);
+color:#fff;
+}
+
+.tag{
+display:inline-block;
+background:#2a2a2a;
+color:var(--primary);
+padding:5px 10px;
+border-radius:4px;
+margin:5px;
+font-size:.85em;
+font-weight:600;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+border-top:1px solid var(--border);
+margin-top:40px;
+}
+
+ul{padding-left:18px;}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Nasir Nabi</h1>
-    <p>SHRM-SCP | PMP | NEBOSH IGC</p>
-    <p>Strategic HR & Project Management Leader</p>
-    <span class="badge">18+ Years Experience</span>
-    <span class="badge">Mardan, KP Pakistan</span>
-  </header>
+<header class="header">
+<nav class="nav">
+<a href="#about">About</a>
+<a href="#competencies">Competencies</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#certifications">Certifications</a>
+<a href="#awards">Awards</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-  <div class="container">
-    <!-- About -->
-    <section>
-      <h2>Professional Summary</h2>
-      <p>Results-driven HRM, Project Management, Environmental, and Quality Management professional with over 18 years of experience driving organizational excellence, sustainability, and quality standards. Proven track record in managing complex projects, leading cross-functional teams, and implementing effective HR strategies. Skilled in ISO standards, environmental management, and quality assurance, with a strong passion for delivering exceptional results and fostering a culture of continuous improvement.</p>
-    </section>
+<section class="hero container">
+<p class="role">HUMAN RESOURCE • PROJECT • QUALITY MANAGEMENT</p>
+<h1>Nasir Nabi</h1>
 
-    <!-- Core Competencies -->
-    <section>
-      <h2>Core Competencies</h2>
-      <div class="grid">
-        <div class="card"><h3>Strategic HR Leadership</h3><p>Workforce planning, talent acquisition, DEI implementation, policy design & compliance.</p></div>
-        <div class="card"><h3>Project Management Excellence</h3><p>Agile & Waterfall delivery, budgeting, risk mitigation, governance & QA.</p></div>
-        <div class="card"><h3>Health, Safety & Risk</h3><p>ISO 45001, hazard analysis, incident investigation, emergency response, safety culture.</p></div>
-        <div class="card"><h3>Cross-Functional Leadership</h3><p>Change management, CSR, data-driven decisions, operational excellence.</p></div>
-      </div>
-    </section>
+<div class="cert-badges">
+<div class="cert green">SHRM-SCP</div>
+<div class="cert orange">PMP</div>
+<div class="cert purple">NEBOSH IGC</div>
+</div>
 
-    <!-- Experience -->
-    <section>
-      <h2>Selected Experience</h2>
-      <ul class="timeline">
-        <li>
-          <strong>Senior Consultant HRM</strong> – Hotel Elites Nathiagali (Aug 2025 – Present)<br>
-          Leading institutional registration with NAVTTC, TEKTAs, GIZ, UNDP; designing HR frameworks & training institutes.
-        </li>
-        <li>
-          <strong>Consultant Human Resource Management</strong> – Alhamra Hotel Mardan (Oct 2009 – Jul 2025)<br>
-          Full-spectrum HR: recruitment, payroll & benefits, employee relations, union negotiations, training & development.
-        </li>
-        <li>
-          <strong>Deputy Director (HRD & Zone Ops)</strong> – KPEZDMC Govt. KP (Jul 2022 – Aug 2023)<br>
-          Oversaw industrial estate operations, investor facilitation, land acquisition, leasing & compliance.
-        </li>
-        <li>
-          <strong>Principal (TVET)</strong> – TEVTA Govt. KPK (Jan 2014 – Mar 2017)<br>
-          Directed institute strategy, CBT programs, industry linkages & OJT agreements for 5 major companies.
-        </li>
-      </ul>
-    </section>
+<p>Driving Organizational Excellence, Compliance & Sustainable Growth</p>
 
-    <!-- Education & Certifications -->
-    <section>
-      <h2>Education & Certifications</h2>
-      <div class="grid">
-        <div class="card"><strong>MBA (HRM)</strong><br>Air University Islamabad</div>
-        <div class="card"><strong>Masters (Mathematics)</strong><br>Northern University Nowshera</div>
-        <div class="card"><strong>SHRM-SCP</strong><br>Society for Human Resource Management, USA</div>
-        <div class="card"><strong>PMP®</strong><br>Project Management Institute, USA</div>
-        <div class="card"><strong>NEBOSH IGC</strong><br>National Examination Board, UK</div>
-        <div class="card"><strong>KAB Certified Trainer</strong><br>EU & TUSDEC</div>
-      </div>
-    </section>
+<div class="btns">
+<a href="#contact" class="btn primary">
+<i class="fas fa-paper-plane"></i> Get In Touch
+</a>
 
-    <!-- Contact -->
-    <section>
-      <h2>Contact</h2>
-      <div class="contact-bar">
-        <a href="tel:+923319069388">📱 +92 331 906 9388</a>
-        <a href="mailto:akcentstyle71@gmail.com">✉️ Email</a>
-        <a href="https://wa.me/923319069388" target="_blank">WhatsApp</a>
-      </div>
-    </section>
-  </div>
+<a href="mailto:akcentstyle71@gmail.com" class="btn secondary">
+<i class="fas fa-envelope"></i> Email
+</a>
 
-  <footer>
-    © <span id="yr"></span> Nasir Nabi. Crafted with care.
-  </footer>
+<a href="https://drive.google.com/file/d/1mkdfSUULX5RfZsGNi7vvzrZErvofB8K0/view?usp=sharing"
+   class="btn secondary"
+   target="_blank"
+   rel="noopener noreferrer">
+    <i class="fas fa-file-pdf"></i> View Resume
+</a>
+</div>
+</section>
 
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+<section id="about" class="section container">
+<h2>Professional Summary</h2>
+<div class="card">
+<p>
+Results-driven Human Resource Management, Project Management, and Quality Management professional with
+<strong>over 18 years of experience</strong> driving organizational excellence, sustainability, and quality standards.
+Proven track record in managing complex projects, leading cross-functional teams, and implementing effective HR strategies.
+</p>
+<p>
+Expert in ISO standards, environmental management, occupational health & safety, workforce planning, organizational development,
+and operational excellence across public and private sector organizations.
+</p>
+</div>
+</section>
+
+<section id="competencies" class="section container">
+<h2>Core Competencies</h2>
+
+<div class="card">
+<h3>Strategic HR Leadership</h3>
+<span class="tag">Workforce Planning</span>
+<span class="tag">Talent Acquisition</span>
+<span class="tag">Employee Engagement</span>
+<span class="tag">Performance Management</span>
+<span class="tag">HR Policy Design</span>
+<span class="tag">DEI Implementation</span>
+<span class="tag">Compliance & Audit Readiness</span>
+</div>
+
+<div class="card">
+<h3>Project Management</h3>
+<span class="tag">Agile</span>
+<span class="tag">Waterfall</span>
+<span class="tag">Budget Management</span>
+<span class="tag">Stakeholder Communication</span>
+<span class="tag">Risk Mitigation</span>
+<span class="tag">Quality Assurance</span>
+<span class="tag">Change Management</span>
+</div>
+
+<div class="card">
+<h3>Health, Safety & Business Leadership</h3>
+<span class="tag">ISO 9001</span>
+<span class="tag">ISO 14000</span>
+<span class="tag">ISO 45001</span>
+<span class="tag">NEBOSH</span>
+<span class="tag">Corporate Governance</span>
+<span class="tag">CSR</span>
+<span class="tag">Operational Excellence</span>
+</div>
+</section>
+
+<section id="experience" class="section container">
+<h2>Professional Experience</h2>
+
+<div class="card">
+<h3>Senior Consultant – HRM & Organizational Development</h3>
+<p><em>Hotel Elites, Nathiagali | Aug 2025 – Present</em></p>
+<ul>
+<li>Lead institutional registration and compliance initiatives with NAVTTC, Ministry for Federal Education, TEVTAs, and provincial authorities</li>
+<li>Established and managed Training & Development Institute with GIZ, UNDP, and international development agencies</li>
+<li>Strengthened HR frameworks, policies, performance management, and succession planning</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Consultant – Human Resource Management</h3>
+<p><em>Alhamra Hotel, Mardan | Oct 2009 – Jul 2025</em></p>
+<ul>
+<li>Directed hiring processes including Executive Committee Members</li>
+<li>Managed benefits, wage administration, appraisals, and manpower budgets</li>
+<li>Implemented safety programs, grievance handling, and union negotiations</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Deputy Director (BPS-18) – HRD & Zone Operations</h3>
+<p><em>KPEZDMC, Government of KP | Jul 2022 – Aug 2023</em></p>
+<ul>
+<li>Oversaw industrial estate operations and revival of sick units</li>
+<li>Managed leases, utilities, contracts, and budgeting activities</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Assistant Director (BPS-17) – TVET</h3>
+<p><em>KPEZDMC | May 2017 – Jul 2022</em></p>
+<ul>
+<li>Led demand-driven vocational training programs</li>
+<li>Developed industry linkages for placements and OJT</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Earlier Roles</h3>
+<ul>
+<li>Principal — TEVTA KP</li>
+<li>Admin & Finance Officer — Amazon Corporation</li>
+<li>Administrator — Universal Institute of Technology</li>
+<li>Trainee Consultant — EQMC (ISO Systems)</li>
+</ul>
+</div>
+</section>
+
+<section id="education" class="section container">
+<h2>Education</h2>
+<div class="card">
+<p><strong>MSc Mathematics</strong> — Northern University (2012)</p>
+<p><strong>MBA (HRM)</strong> — Air University Islamabad (2007)</p>
+<p><strong>BSc</strong> — University of Peshawar (2005)</p>
+</div>
+</section>
+
+<section id="certifications" class="section container">
+<h2>Professional Certifications</h2>
+<div class="card">
+<ul>
+<li>SHRM-SCP — Society for Human Resource Management (USA)</li>
+<li>PMP — NAVTTC Pakistan</li>
+<li>NEBOSH International General Certificate (UK)</li>
+<li>KAB Certified Trainer — EU & TUSDEC</li>
+</ul>
+</div>
+</section>
+
+<section id="awards" class="section container">
+<h2>Awards & Distinctions</h2>
+<div class="card">
+<ul>
+<li>Young Entrepreneurial Award — YES Network Pakistan</li>
+<li>Best Teacher / Administrator Award</li>
+<li>Skilled Training Award — Mehcon International</li>
+<li>Best Debates Award — PAK-TURK International Schools</li>
+</ul>
+</div>
+</section>
+
+<section id="skills" class="section container">
+<h2>Technical & Language Skills</h2>
+<div class="card">
+<p><strong>Languages:</strong> English, Urdu, Arabic, Pashto</p>
+<p><strong>IT Skills:</strong> Microsoft Office (Professional), Windows 10/11, Hardware & Troubleshooting, Networking, Internet Applications</p>
+<p><strong>Standards:</strong> ISO 9001, ISO 14000, ISO 45001</p>
+</div>
+</section>
+
+<section id="contact" class="section container">
+<h2>Contact</h2>
+<div class="card">
+<p><i class="fas fa-phone"></i> +92-331-9069388</p>
+<p><i class="fas fa-envelope"></i> akcentstyle71@gmail.com</p>
+<p><i class="fas fa-location-dot"></i> Mardan, KP, Pakistan</p>
+</div>
+</section>
+
+<footer class="footer">
+<p>© 2025 Nasir Nabi — All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
